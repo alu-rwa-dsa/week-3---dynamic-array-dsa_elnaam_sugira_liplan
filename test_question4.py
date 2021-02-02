@@ -1,5 +1,5 @@
 import unittest
-from DSA_Wk3_Q4 import asso_list
+from question4 import asso_list
 
 
 class TestQuestion4(unittest.TestCase):
