@@ -1,3 +1,5 @@
+liplan_work
+
 
 
 
@@ -16,112 +18,32 @@ if __name__ == "__main__":
 
     print(linkedListMerge(a))
 
-# time complexity - O(N)
-# space complexity - O(1)
-=======
 import ctypes
 import gc
 
 
-class ArrayClass():
+from question2 import DynamicArray, ArrayClass
 
-    arr_list = []
 
-    def __init__(self):
-        self.n = 0  # Count actual elements (Default is 0)
-        self.capacity = 1   # Default Capacity
-        self.A = self.make_array(self.capacity)
-        self.__class__.arr_list.append(self)
+class MoreF(DynamicArray, ArrayClass):
 
-    def __len__(self):
-        """
-        Return number of elements sorted in array
-        """
-        return self.n
+    def __init__(self, array):
+        DynamicArray.__init__(self, array)    
+        ArrayClass.__init__(self, array)
+        self.array = array
 
-    def __get__(self, i):
-        """
-        Return element at index i
-        """
-        if not 0 <= i < self.n:
-            # Check it i index is in bounds of array
-            return IndexError('i is out of bounds !')
-
-        return self.A[i]   # Retrieve from the array at index i
-
-    def __set__(self, val, i):
-        """
-         This function inserts the item at any specified index
-        """
-        if i < 0 or i > self.n:
-            print("please enter appropriate index..")
-            return
-
-        if self.n == self.capacity:
-            self._resize(2*self.capacity)
-  
-        for j in range(self.n - 1, i - 1, - 1):
-            self.A[j+1] = self.A[j]
-
-        self.A[i] = val
-        self.n += 1
-    
-    def _resize(self, nw_cap): 
-        """ 
-        Resize internal array to capacity new_cap
-        """
+    def contains(self, val):
+        exist = val in self.array
+        return exist
         
-        B = self.make_array(nw_cap) # New bigger array
+    def reverse(self):
+        rev_arr = self.array[::-1]
+        return rev_arr
 
-        for k in range(self.n): # Reference all existing values
-            B[k] = self.A[k]
-              
-        self.A = B # Call A the new bigger array
-        self.capacity = nw_cap # Reset the capacity
-          
-    def make_array(self, nw_cap): 
-        """ 
-        Returns a new array with new_cap capacity
-        """
-        return (nw_cap * ctypes.py_object)()
-
-    
-
-class DynamicArray(ArrayClass):
-
-    def add(self, val):
-        """
-        Add element to end of the array
-        """
-        if self.n == self.capacity:
-            # Double capacity if not enough room
-            self._resize(2 * self.capacity)  
-    
-        self.A[self.n] = val  # Set self.n index to element
-        self.n += 1
-
-    def dele(self):
-        """
-        This function deletes item from the end of array
-        """
-
-        if self.n == 0:
-            print("Array is empty deletion not Possible")
-            return
-
-        self.A[self.n - 1] = 0
-
-        self.n -= 1
+    def insert(self, val, i):
+        return self.array[:i] + [val] + self.array[i:]
 
 
-class morefunctions():
-    def contains(arr, val):
-        pass
 
-    def reverse(arr):
-        pass
-
-    def insert(arr, val, i):
-        pass
-
-
+    # Time Complexity: O(1)
+    # Space Complexity: O(1)
