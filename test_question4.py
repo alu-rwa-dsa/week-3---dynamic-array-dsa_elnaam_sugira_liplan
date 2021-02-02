@@ -3,23 +3,23 @@ from question4 import asso_list
 
 
 class TestQuestion4(unittest.TestCase):
-    def testfirst(self):
+    def test_first(self):
         p = asso_list()
         self.assertEqual(p.add("meonly", 19, "CSS", "UTK"), {'name': 'meonly', 'age': 19, 'major': 'CSS', 'country': 'UTK'})
 
-    def testsecond(self):
+    def test_second(self):
         p = asso_list()
-        p.add("onename", 89, "IBT", "UK")
-        self.assertEqual(p.a_remove("age"), {'name': 'onename', 'major': 'IBT', 'country': 'UK'})
+        p.add("meonly", 19, "CSS", "UTK")
+        self.assertEqual(p.a_remove("age"), {'name': 'meonly', 'major': 'CSS', 'country': 'UTK'})
 
-    def testthird(self):
+    def test_third(self):
         p = asso_list()
-        p.add("onename", 89, "IBT", "UK")
-        self.assertEqual(p.a_modify("onename2", "CS", "US"), {'name': 'onename2', 'age' : 89, 'major': 'CS', 'country': 'US'})
+        p.add("meonly", 19, "CSS", "UTK")
+        self.assertEqual(p.a_modify("meonly2", "CSS", "UTK"), {'name': 'meonly2', 'age' : 19, 'major': 'CSS', 'country': 'UTK'})
 
-    def testfourth(self):
+    def test_fourth(self):
         p = asso_list()
-        p.add("onename", 89, "IBT", "UK")
+        p.add("meonly", 89, "19", "UTK")
         self.assertEqual(p.a_lookup("age"), "not found")
 
 
