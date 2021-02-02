@@ -14,7 +14,7 @@ class our_list:
         return a_list
 
     def a_remove(self, key):
-        del a_list[k]
+        del a_list[key]
         return a_list
 
     def a_modify(self, name, major, country):
@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     print(p.a_remove("Faculty"))
 
-    print(p.a_modify("Meonly", "CS", "IBT"))
+    print(p.a_modify("Liplan", "CS", "GC"))
 
     print(p.a_lookup("name"))
 
