@@ -5,7 +5,7 @@ from question4 import asso_list
 class TestQuestion4(unittest.TestCase):
     def testfirst(self):
         p = asso_list()
-        self.assertEqual(p.add("onename", 89, "IBT", "UK"), {'name': 'onename', 'age': 89, 'major': 'IBT', 'country': 'UK'})
+        self.assertEqual(p.add("meonly", 19, "CSS", "UTK"), {'name': 'meonly', 'age': 19, 'major': 'CSS', 'country': 'UTK'})
 
     def testsecond(self):
         p = asso_list()
