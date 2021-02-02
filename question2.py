@@ -1,5 +1,4 @@
 import ctypes
-import gc
 
 
 class ArrayClass():
@@ -64,7 +63,6 @@ class ArrayClass():
         """
         return (nw_cap * ctypes.py_object)()
 
-    
 
 class DynamicArray(ArrayClass):
 
@@ -91,3 +89,20 @@ class DynamicArray(ArrayClass):
         self.A[self.n - 1] = 0
 
         self.n -= 1
+
+
+if __name__ == "__main__":
+    ar1 = ArrayClass()
+
+    ar1.__set__(45, 0)
+    ar1.__set__(34, 0)
+
+    print(ar1.__len__())
+
+    ardy1 = DynamicArray()
+
+    ardy1.add(57)
+    ardy1.add(37)
+
+    ardy1.dele()
+
