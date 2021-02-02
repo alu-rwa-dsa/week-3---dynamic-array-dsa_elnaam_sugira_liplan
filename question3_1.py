@@ -1,24 +1,3 @@
-
-
-
-def linkedListMerge(ls):
-    nls = []
-    for l in ls:
-        nls.extend(l)
-        rmd = set(nls)
-        l_rmd = list(rmd)
-
-    return l_rmd
-
-
-if __name__ == "__main__":
-    a = [[2, 4, 9, 2, 1, 6], [9, 5, 22, 1, 0, 56, 8, 5]]
-
-    print(linkedListMerge(a))
-
-# time complexity - O(N)
-# space complexity - O(1)
-=======
 import ctypes
 import gc
 
@@ -86,42 +65,3 @@ class ArrayClass():
         return (nw_cap * ctypes.py_object)()
 
     
-
-class DynamicArray(ArrayClass):
-
-    def add(self, val):
-        """
-        Add element to end of the array
-        """
-        if self.n == self.capacity:
-            # Double capacity if not enough room
-            self._resize(2 * self.capacity)  
-    
-        self.A[self.n] = val  # Set self.n index to element
-        self.n += 1
-
-    def dele(self):
-        """
-        This function deletes item from the end of array
-        """
-
-        if self.n == 0:
-            print("Array is empty deletion not Possible")
-            return
-
-        self.A[self.n - 1] = 0
-
-        self.n -= 1
-
-
-class morefunctions():
-    def contains(arr, val):
-        pass
-
-    def reverse(arr):
-        pass
-
-    def insert(arr, val, i):
-        pass
-
-

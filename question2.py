@@ -1,26 +1,4 @@
-
-
-
-def linkedListMerge(ls):
-    nls = []
-    for l in ls:
-        nls.extend(l)
-        rmd = set(nls)
-        l_rmd = list(rmd)
-
-    return l_rmd
-
-
-if __name__ == "__main__":
-    a = [[2, 4, 9, 2, 1, 6], [9, 5, 22, 1, 0, 56, 8, 5]]
-
-    print(linkedListMerge(a))
-
-# time complexity - O(N)
-# space complexity - O(1)
-=======
 import ctypes
-import gc
 
 
 class ArrayClass():
@@ -85,7 +63,6 @@ class ArrayClass():
         """
         return (nw_cap * ctypes.py_object)()
 
-    
 
 class DynamicArray(ArrayClass):
 
@@ -114,14 +91,18 @@ class DynamicArray(ArrayClass):
         self.n -= 1
 
 
-class morefunctions():
-    def contains(arr, val):
-        pass
+if __name__ == "__main__":
+    ar1 = ArrayClass()
 
-    def reverse(arr):
-        pass
+    ar1.__set__(45, 0)
+    ar1.__set__(34, 0)
 
-    def insert(arr, val, i):
-        pass
+    print(ar1.__len__())
 
+    ardy1 = DynamicArray()
+
+    ardy1.add(57)
+    ardy1.add(37)
+
+    ardy1.dele()
 
