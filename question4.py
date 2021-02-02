@@ -1,4 +1,3 @@
-#Author : Brenda
 
 a_list = dict()
 
@@ -39,7 +38,7 @@ if __name__ == "__main__":
 
     print(p.a_remove("Faculty"))
 
-    print(p.a_modify("Gilisho", "CS", "IBT"))
+    print(p.a_modify("Meonly", "CS", "IBT"))
 
     print(p.a_lookup("name"))
 
